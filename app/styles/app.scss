@@ -26,7 +26,12 @@ body {
     left: 0;
     li{
       padding:0;
-      
+      i{
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+      }
     }
   }
   ul{
@@ -43,6 +48,14 @@ body {
           opacity:0.8l;
         }
       }
+    }
+  }
+}
+.main{
+  margin-top:1em;
+  .nav-tabs{
+    a{
+      font-size:0.65em;
     }
   }
 }
