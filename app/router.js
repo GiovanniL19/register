@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('side-nav');
   this.route('list');
+  this.route('people');
 });
 
 export default Router;

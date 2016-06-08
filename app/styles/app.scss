@@ -56,6 +56,8 @@ body {
   margin-top:1em;
   overflow-y:scroll;
   height:98vh;
+  text-align: left;
+  padding:0 2em;
   .nav-tabs{
     a{
       font-size:0.65em;
@@ -75,6 +77,37 @@ body {
     }
     .contact{
       padding-top:1em;
+    }
+  }
+}
+
+.side-list{
+  border-right:1px solid #ccc;
+  height:98vh;
+  margin-left:-1.15em;
+  ul{
+    padding:0;
+    margin:0 -1em;
+    li{
+      min-height:5em;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height:5em;
+      border-bottom:1px solid #ccc;
+      &:last-child{
+        border:none;
+      }
+      a{
+        font-size: 0.65em;
+        cursor:pointer;
+      }
+    }
+    .new-person{
+      min-height:4em;
+      line-height:4em;
+      background:#eee;
+      margin-bottom:2em;
     }
   }
 }

@@ -7,25 +7,34 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade in active" id="checkedIn">     
+    <div role="tabpanel" class="tab-pane fade in active text-center" id="checkedIn">     
        {{#each model as |person|}}
          {{#if person.checkedIn}}
-           <div class="col-xs-12 col-sm- 6 col-md-4 col-lg-3 col-xl-2">
+           <div class="col-xs-6 col-sm- 6 col-md-4 col-lg-3 col-xl-2">
              <div class="user-card">
                <div class="profile-picture">
                  <img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13015449_1363889360304661_4798637813898539110_n.jpg?oh=582f4c7a34e9418596cdac2e544a4c8f&oe=57C5A238">
                </div>
                <div class="title">
-                 <h3>Mr John Smith</h3>
+                 <h3>{{person.name}}</h3>
                </div>
                <div class="contact">
-                 <p>01020392819</p>
+                 <p>{{person.contact}}</p>
                </div>
              </div>
            </div>
          {{/if}}
+       {{else}}
+       <br>
+       <p>...</p><br>
+       <small>No people are checked in</small>
        {{/each}}
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="checkedOut">...</div>
+    <div role="tabpanel" class="tab-pane fade text-center" id="checkedOut">
+      
+      <br>
+       <p>...</p><br>
+       <small>No people are checked out</small>
+    </div>
   </div>
 </div>
