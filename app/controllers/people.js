@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  application: Ember.inject.controller(),
   newPerson: false,
   peopleList: [],
   getPeople: function(){
@@ -17,12 +18,20 @@ export default Ember.Controller.extend({
       }
     },
     savePerson: function(){
-      if(this.get('newPerson')){
-        this.set('model.dateCreated', Date.now());
-      }
+      let controller = this;
       
-      this.set('model.lastUpdated', Date.now());
-      this.get('model').save();
+      if(this.get('model.name') && this.get('model.contact')){
+        if(this.get('newPerson')){
+          this.set('model.dateCreated', Date.now());
+        }
+      
+        this.set('model.lastUpdated', Date.now());
+        this.get('model').save().then(function(){
+          controller.set('newPerson', false);
+        });
+      }else{
+        this.set('application.message', 'Please fill in all the required fields');
+      }
     }
   }
 });

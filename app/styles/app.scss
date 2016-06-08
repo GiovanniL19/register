@@ -13,7 +13,39 @@ body {
 .ember-view{
   height:100%;
 }
-
+.btn-primary{
+  color: #fff;
+  background-color: $blueColour;
+  border-color: none;
+  border-radius: 0;
+  padding: 0.5em 2em;
+  margin: 1em 0;
+  &:focus, &:hover{
+    background: $blueColour !important;
+    opacity:0.7;
+    outline:0 !important;
+  }
+  &:focus{
+    opacity:0.8;
+  }
+}
+p{
+  text-transform: none;
+  letter-spacing:2px;
+  font-size:0.9em;
+}
+.message-pop-up{
+  background: $blueColour;
+  color:white;
+  font-size:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:3em;
+  padding:3em;
+  z-index:999999999;
+}
 .sideNav {
   background: $blueColour;
   height:100%;

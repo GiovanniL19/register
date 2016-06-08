@@ -11,11 +11,16 @@
   {{#if newPerson}}
     <h4>Add a new person</h4>
     <div class="form">
+      <br>
+      <p>Adding a person is nice and simple. Just add their name, contact number and a profile picture. Hit save and you will now be able to check in and check out that person. You can also come back to them and edit their details or delete the person all together.</p>
+      <br>
+      
+      
       <small>Name</small><br>
       {{input type="text" value=model.name}}
       <br>
       <small>Contact</small><br>
-      {{input type="text" value=model.contact}}
+      {{input type="number" value=model.contact}}
       <br>
       <button class="btn btn-primary" {{action 'savePerson'}}>Save</button>
     </div>
