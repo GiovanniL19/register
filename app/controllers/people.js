@@ -17,6 +17,19 @@ export default Ember.Controller.extend({
         this.set('model', this.store.createRecord('person'));
       }
     },
+    setPerson: function(person){
+      this.set('model', person);
+      this.set('newPerson', false);
+    },
+    removePerson: function(person){
+      let controller = this;
+      if(confirm('Are you sure you want to delete this '+ person.get('name') +'?')){
+        person.destroyRecord().then(function(){
+          controller.set('model', null);
+          controller.set('application.message', 'Person has been deleted');
+        });
+      }
+    },
     savePerson: function(){
       let controller = this;
       
@@ -31,6 +44,18 @@ export default Ember.Controller.extend({
         });
       }else{
         this.set('application.message', 'Please fill in all the required fields');
+      }
+    },
+    checkInStatus: function(option){
+      let controller = this;
+      
+      var person = this.get('model');
+      
+      person.set('checkedIn', option);
+      if(!this.get('newPerson')){
+        person.save().then(function(){
+          controller.set('application.message', 'Check in status changed');
+        });
       }
     }
   }

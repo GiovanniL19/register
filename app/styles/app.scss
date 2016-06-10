@@ -10,20 +10,28 @@ body {
   font-weight: 300;
   text-transform: uppercase;
 }
-.ember-view{
-  height:100%;
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow:hidden;
 }
-.btn-primary{
-  color: #fff;
-  background-color: $blueColour;
+.btn{
   border-color: none;
   border-radius: 0;
   padding: 0.5em 2em;
   margin: 1em 0;
   &:focus, &:hover{
-    background: $blueColour !important;
     opacity:0.7;
     outline:0 !important;
+  }
+}
+.btn-primary{
+  color: #fff;
+  background-color: $blueColour;
+  &:focus, &:hover{
+    background: $blueColour !important;
   }
   &:focus{
     opacity:0.8;
@@ -88,8 +96,12 @@ p{
   margin-top:1em;
   overflow-y:scroll;
   height:98vh;
-  text-align: left;
   padding:0 2em;
+  padding-top:2em;
+  input {
+    padding: 1em;
+    width: 100%;
+  }
   .nav-tabs{
     a{
       font-size:0.65em;
@@ -111,6 +123,14 @@ p{
       padding-top:1em;
     }
   }
+  .person-picture{
+    width: 13em;
+    margin: 0 auto;
+    img{
+      width:100%;
+      border-radius:100%;
+    }
+  }
 }
 
 .side-list{
@@ -127,19 +147,21 @@ p{
       margin: 0;
       line-height:5em;
       border-bottom:1px solid #ccc;
+      font-size: 0.7em;
+      cursor:pointer; 
+      &:hover{
+       background:#eee; 
+      }
       &:last-child{
         border:none;
       }
-      a{
-        font-size: 0.65em;
-        cursor:pointer;
-      }
     }
     .new-person{
-      min-height:4em;
-      line-height:4em;
+      min-height:6em;
+      line-height:6em;
       background:#eee;
       margin-bottom:2em;
+      font-weight: bold;
     }
   }
 }
