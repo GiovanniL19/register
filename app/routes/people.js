@@ -13,5 +13,9 @@ export default Ember.Route.extend({
     if(controller.get('newPerson')){
       controller.get('model').deleteRecord();
     }
+    
+    controller.get('peopleList').forEach(function(person){
+      person.set('isSelected', false);
+    });
   }
 });

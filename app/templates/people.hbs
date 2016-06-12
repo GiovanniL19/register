@@ -2,21 +2,23 @@
   <ul>
     <li class="new-person" {{action "addNewPerson"}}>New Person</li>
     {{#each peopleList as |person|}}
-      <li {{action 'setPerson' person}} class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 {{if person.isSelected 'selected'}}">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-          <div class="picture">
-            <img src="{{person.profilePicture.data}}">
+      {{#if person.dateCreated}}
+        <li {{action 'setPerson' person}} class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 {{if person.isSelected 'selected'}}">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="picture">
+              <img src="{{person.profilePicture.data}}">
+            </div>
           </div>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">{{person.name}}</div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-          {{#if person.isCheckedIn}}
-            <strong>In</strong>
-          {{else}}
-            <strong>Out</strong>
-          {{/if}}
-        </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">{{person.name}}</div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            {{#if person.isCheckedIn}}
+              {{fa-icon "sign-in"}}
+            {{else}}
+              {{fa-icon "sign-out"}}
+            {{/if}}
+          </div>
         </li>
+      {{/if}}
     {{/each}}
   </ul>
 </div>

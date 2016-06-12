@@ -10,6 +10,9 @@ body {
   font-weight: 300;
   text-transform: uppercase;
 }
+a{
+  cursor:pointer;
+}
 .container {
   width: 100%;
   margin: 0;
@@ -95,7 +98,7 @@ p{
 .main{
   margin-top:1em;
   overflow-y:scroll;
-  height:98vh;
+  height:100vh;
   padding:0 2em;
   padding-top:2em;
   input {
@@ -128,6 +131,11 @@ p{
     .contact{
       padding-top:1em;
     }
+    .options{
+      a{
+        color:#555;
+      }
+    }
   }
   .person-picture{
     width: 13em;
@@ -144,10 +152,10 @@ p{
   height:98vh;
   margin-left:-1.15em;
   .picture{
-    border-radius: 100%;
+    //border-radius: 100%;
     width: 4em;
     height: 4em;
-    overflow:hidden;
+    //overflow:hidden;
     margin:0 auto;
     img{
       top: 0;
