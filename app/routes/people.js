@@ -11,7 +11,9 @@ export default Ember.Route.extend({
   deactivate: function(){
     let controller = this.get('controller');
     if(controller.get('newPerson')){
-      controller.get('model').deleteRecord();
+      if(controller.get('model')){
+        controller.get('model').deleteRecord();
+      }
     }
     
     controller.get('peopleList').forEach(function(person){

@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 sideNav">
+  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 sideNav" style="background: {{settings.theme}} !important;">
     {{render "side-nav"}}
   </div>
   <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 text-center">
     {{#if message}}
-      <div class="message-pop-up text-center" {{action 'dismissMessage'}}>
+      <div class="message-pop-up text-center" style="background: {{settings.theme}} !important;" {{action 'dismissMessage'}}>
         {{message}}
       </div>
     {{/if}}

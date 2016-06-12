@@ -13,6 +13,10 @@ body {
 a{
   cursor:pointer;
 }
+.sp-replacer{
+  background:white;
+  border:none;
+}
 .container {
   width: 100%;
   margin: 0;
@@ -50,7 +54,7 @@ p{
   color:white;
   font-size:100%;
   position:absolute;
-  top:0;
+  bottom:14px;
   left:0;
   width:100%;
   min-height:3em;
@@ -196,4 +200,9 @@ p{
       font-weight: bold;
     }
   }
+}
+.card{
+  border:1px solid #eee;
+  margin:1em;
+  padding:1em;
 }

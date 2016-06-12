@@ -13,8 +13,8 @@ export default Ember.Controller.extend({
   actions: {
     fileLoaded: function(file) {
       let controller = this;
-      if(file.type.indexOf('image') === -1 && file.size > 2000){
-        controller.set('application.message', 'You can only upload an image no more than 2mb');
+      if(file.type.indexOf('image') === -1 && file.size > 1000){
+        controller.set('application.message', 'You can only upload an image no more than 1MB');
       }else{
         this.set('model.profilePicture', Ember.Object.create(file));
       }
