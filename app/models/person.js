@@ -21,6 +21,9 @@ export default DS.Model.extend({
     }else{
       return false;
     }
-  }.property('checkedIn')
+  }.property('checkedIn'),
+  isSelected: function(){
+    return false;
+  }.property()
   
 });

@@ -85,7 +85,7 @@ p{
         color:white;
         &:hover{
           cursor:pointer;
-          opacity:0.8l;
+          opacity:0.8;
         }
       }
     }
@@ -159,6 +159,10 @@ p{
   ul{
     padding:0;
     margin:0 -1em;
+    .selected{
+      background:$blueColour;
+      color:white;
+    }
     li{
       min-height: 6em;
       list-style: none;
@@ -169,7 +173,8 @@ p{
       font-size: 0.7em;
       cursor:pointer; 
       &:hover{
-       background:#eee; 
+       background:$blueColour; 
+       color:white;
       }
       &:last-child{
         border:none;

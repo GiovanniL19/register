@@ -4,9 +4,6 @@ export default Ember.Controller.extend({
   application: Ember.inject.controller(),
   newPerson: false,
   peopleList: [],
-  noModel: function(){
-    this.set('newPerson', false);
-  }.observes('model'),
   getPeople: function(){
     let controller = this;
     this.store.findAll('person').then(function(data){
@@ -23,12 +20,16 @@ export default Ember.Controller.extend({
       }
     },
     addNewPerson: function(){
-      if(!this.get('newPerson')){
+      if(this.get('newPerson') === false){
         this.set('newPerson', true);
         this.set('model', this.store.createRecord('person'));
       }
     },
     setPerson: function(person){
+      this.get('peopleList').forEach(function(person){
+        person.set('isSelected', false);
+      });
+      person.set('isSelected', true);
       if(this.get('newPerson')){
         this.get('model').deleteRecord();
       }

@@ -2,7 +2,7 @@
   <ul>
     <li class="new-person" {{action "addNewPerson"}}>New Person</li>
     {{#each peopleList as |person|}}
-      <li {{action 'setPerson' person}} class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <li {{action 'setPerson' person}} class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 {{if person.isSelected 'selected'}}">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
           <div class="picture">
             <img src="{{person.profilePicture.data}}">
