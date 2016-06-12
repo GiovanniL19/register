@@ -11,6 +11,14 @@ export default Ember.Controller.extend({
     });
   },
   actions: {
+    fileLoaded: function(file) {
+      let controller = this;
+      if(file.type.indexOf('image') === -1 && file.size > 2000){
+        controller.set('application.message', 'You can only upload an image no more than 2mb');
+      }else{
+        this.set('model.profilePicture', Ember.Object.create(file));
+      }
+    },
     addNewPerson: function(){
       if(!this.get('newPerson')){
         this.set('newPerson', true);
@@ -41,6 +49,7 @@ export default Ember.Controller.extend({
         this.set('model.lastUpdated', Date.now());
         this.get('model').save().then(function(){
           controller.set('newPerson', false);
+          controller.set('application.message', 'Person saved');
         });
       }else{
         this.set('application.message', 'Please fill in all the required fields');

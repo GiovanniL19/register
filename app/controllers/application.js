@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   message: '',
   messagesListen: function(){
-    let controller = this
+    let controller = this;
     if(this.get('message')){
       setTimeout(function(){
         controller.set('message', '');

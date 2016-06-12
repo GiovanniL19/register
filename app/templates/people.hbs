@@ -22,7 +22,13 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="person-picture">
-          <img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13015449_1363889360304661_4798637813898539110_n.jpg?oh=582f4c7a34e9418596cdac2e544a4c8f&oe=57C5A238">
+          {{#file-picker fileLoaded="fileLoaded" readAs="readAsDataURL" preview=false}}
+            {{#if model.profilePicture.data}}
+              <div class="picture" style="background:url('{{model.profilePicture.data}}') no-repeat center center; background-size:cover;"></div> 
+            {{else}}
+              <small>Drag or click here to choose profile picture</small>
+            {{/if}}
+          {{/file-picker}}
         </div>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -30,9 +36,6 @@
         {{input type="text" value=model.name}}
         <br><br>
         <small>Contact</small><br>
-        {{input type="number" value=model.contact}}
-        <br><br>
-        <small>Profile Picture</small><br>
         {{input type="number" value=model.contact}}
       </div>
       <hr>
