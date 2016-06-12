@@ -7,9 +7,51 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade in active" id="checkedIn">
-      
+    <div role="tabpanel" class="tab-pane fade in active text-center" id="checkedIn">     
+       {{#each model as |person|}}
+         {{#if person.checkedIn}}
+           <div class="col-xs-6 col-sm- 6 col-md-4 col-lg-3 col-xl-2">
+             <div class="user-card">
+               <div class="profile-picture">
+                 <div class="picture" style="background:url('{{person.profilePicture.data}}') no-repeat center center; background-size:cover;"></div>
+               </div>
+               <div class="title">
+                 <h3>{{person.name}}</h3>
+               </div>
+               <div class="contact">
+                 <p>{{person.contact}}</p>
+               </div>
+             </div>
+           </div>
+         {{/if}}
+       {{else}}
+       <br>
+       <p>...</p><br>
+       <small>No people are checked in</small>
+       {{/each}}
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="checkedOut">...</div>
+    <div role="tabpanel" class="tab-pane fade text-center" id="checkedOut">
+      {{#each model as |person|}}
+        {{#unless person.checkedIn}}
+          <div class="col-xs-6 col-sm- 6 col-md-4 col-lg-3 col-xl-2">
+            <div class="user-card">
+              <div class="profile-picture">
+                <div class="picture" style="background:url('{{person.profilePicture.data}}') no-repeat center center; background-size:cover;"></div>
+              </div>
+              <div class="title">
+                <h3>{{person.name}}</h3>
+              </div>
+              <div class="contact">
+                <p>{{person.contact}}</p>
+              </div>
+            </div>
+          </div>
+        {{/unless}}
+      {{else}}
+        <br>
+        <p>...</p><br>
+        <small>No people are checked out</small>
+      {{/each}}
+    </div>
   </div>
 </div>

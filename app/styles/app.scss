@@ -10,10 +10,50 @@ body {
   font-weight: 300;
   text-transform: uppercase;
 }
-.ember-view{
-  height:100%;
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow:hidden;
 }
-
+.btn{
+  border-color: none;
+  border-radius: 0;
+  padding: 0.5em 2em;
+  margin: 1em 0;
+  &:focus, &:hover{
+    opacity:0.7;
+    outline:0 !important;
+  }
+}
+.btn-primary{
+  color: #fff;
+  background-color: $blueColour;
+  &:focus, &:hover{
+    background: $blueColour !important;
+  }
+  &:focus{
+    opacity:0.8;
+  }
+}
+p{
+  text-transform: none;
+  letter-spacing:2px;
+  font-size:0.9em;
+}
+.message-pop-up{
+  background: $blueColour;
+  color:white;
+  font-size:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:3em;
+  padding:3em;
+  z-index:999999999;
+}
 .sideNav {
   background: $blueColour;
   height:100%;
@@ -22,7 +62,7 @@ body {
     bottom: 0;
     color: white;
     width: 100%;
-    font-size: 3em;
+    font-size: 2em;
     left: 0;
     li{
       padding:0;
@@ -51,11 +91,96 @@ body {
     }
   }
 }
+
 .main{
   margin-top:1em;
+  overflow-y:scroll;
+  height:98vh;
+  padding:0 2em;
+  padding-top:2em;
+  input {
+    padding: 1em;
+    width: 100%;
+  }
   .nav-tabs{
     a{
       font-size:0.65em;
+    }
+  }
+  .picture{
+    border-radius: 100%;
+    height: 10em;
+    width: 10em;
+    margin:0 auto;
+  }
+  .user-card{
+    min-height:5em;
+    border:1px solid #eee;
+    margin:0.5em;
+    padding:2em 1em;
+    .profile-picture{
+      img{
+        border-radius: 100%;
+        height: 10em;
+        width: 10em;
+      }
+    }
+    .contact{
+      padding-top:1em;
+    }
+  }
+  .person-picture{
+    width: 13em;
+    margin: 0 auto;
+    img{
+      width:100%;
+      border-radius:100%;
+    }
+  }
+}
+
+.side-list{
+  border-right:1px solid #ccc;
+  height:98vh;
+  margin-left:-1.15em;
+  .picture{
+    border-radius: 100%;
+    width: 4em;
+    height: 4em;
+    overflow:hidden;
+    margin:0 auto;
+    img{
+      top: 0;
+      left: 0;
+      display: block;
+      width:100%;
+    }
+  }
+  ul{
+    padding:0;
+    margin:0 -1em;
+    li{
+      min-height: 6em;
+      list-style: none;
+      padding: 1em 0;
+      margin: 0;
+      line-height:5em;
+      border-bottom:1px solid #ccc;
+      font-size: 0.7em;
+      cursor:pointer; 
+      &:hover{
+       background:#eee; 
+      }
+      &:last-child{
+        border:none;
+      }
+    }
+    .new-person{
+      min-height:6em;
+      line-height:6em;
+      background:#eee;
+      margin-bottom:2em;
+      font-weight: bold;
     }
   }
 }
