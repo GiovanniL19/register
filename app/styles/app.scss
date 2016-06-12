@@ -62,7 +62,7 @@ p{
     bottom: 0;
     color: white;
     width: 100%;
-    font-size: 3em;
+    font-size: 2em;
     left: 0;
     li{
       padding:0;
@@ -143,13 +143,26 @@ p{
   border-right:1px solid #ccc;
   height:98vh;
   margin-left:-1.15em;
+  .picture{
+    border-radius: 100%;
+    width: 4em;
+    height: 4em;
+    overflow:hidden;
+    margin:0 auto;
+    img{
+      top: 0;
+      left: 0;
+      display: block;
+      width:100%;
+    }
+  }
   ul{
     padding:0;
     margin:0 -1em;
     li{
-      min-height:5em;
+      min-height: 6em;
       list-style: none;
-      padding: 0;
+      padding: 1em 0;
       margin: 0;
       line-height:5em;
       border-bottom:1px solid #ccc;

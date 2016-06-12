@@ -7,5 +7,11 @@ export default Ember.Route.extend({
   activate: function(){
     let controller = this.controllerFor('people');
     controller.getPeople();
+  },
+  deactivate: function(){
+    let controller = this.get('controller');
+    if(controller.get('newPerson')){
+      controller.get('model').deleteRecord();
+    }
   }
 });

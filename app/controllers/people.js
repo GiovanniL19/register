@@ -4,6 +4,9 @@ export default Ember.Controller.extend({
   application: Ember.inject.controller(),
   newPerson: false,
   peopleList: [],
+  noModel: function(){
+    this.set('newPerson', false);
+  }.observes('model'),
   getPeople: function(){
     let controller = this;
     this.store.findAll('person').then(function(data){
@@ -26,6 +29,9 @@ export default Ember.Controller.extend({
       }
     },
     setPerson: function(person){
+      if(this.get('newPerson')){
+        this.get('model').deleteRecord();
+      }
       this.set('model', person);
       this.set('newPerson', false);
     },

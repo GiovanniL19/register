@@ -2,7 +2,21 @@
   <ul>
     <li class="new-person" {{action "addNewPerson"}}>New Person</li>
     {{#each peopleList as |person|}}
-      <li {{action 'setPerson' person}}>{{person.name}}</li>
+      <li {{action 'setPerson' person}} class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <div class="picture">
+            <img src="{{person.profilePicture.data}}">
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">{{person.name}}</div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          {{#if person.isCheckedIn}}
+            <strong>In</strong>
+          {{else}}
+            <strong>Out</strong>
+          {{/if}}
+        </div>
+        </li>
     {{/each}}
   </ul>
 </div>
@@ -49,8 +63,12 @@
         <hr>
         <br>
         <h5>Finish</h5>
-        <button class="btn btn-danger" {{action 'removePerson' model}}>Remove</button>
-        <button class="btn btn-primary" {{action 'savePerson'}}>Save Changes</button>
+        {{#if newPerson}}
+          <button class="btn btn-primary" {{action 'savePerson'}}>Add Person</button>
+        {{else}}
+          <button class="btn btn-danger" {{action 'removePerson' model}}>Remove</button>
+          <button class="btn btn-primary" {{action 'savePerson'}}>Save Changes</button>
+        {{/if}}
     </div>
     
   {{else}}
